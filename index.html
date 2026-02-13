@@ -5,139 +5,253 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <meta name="description" content="Veteran Senior Systems Engineer and CISSP focused on defense systems integration and secure architecture. Mission-critical engineering across RF, cyber, and complex systems delivery." />
-    <meta name="keywords" content="defense systems integration, cybersecurity, CISSP, RF systems, secure architecture, veteran, systems engineer" />
+    <meta name="description" content="Veteran Senior Systems Engineer and CISSP specializing in RF & datalink systems integration, secure mission architectures, and ground station operational support." />
+    <meta name="keywords" content="RF systems, datalink, ground station, systems integration, secure architecture, CISSP, veteran, defense engineering" />
 
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/overrides.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- (1) Active menu highlight + (3) Hero overlay gradient -->
+    <style>
+        /* Active state for menu items */
+        #menu ul li.active > a {
+            font-weight: 700;
+            opacity: 1;
+        }
+
+        /* Small visible marker for active item */
+        #menu ul li.active > a:after {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 10px;
+            border-radius: 50%;
+            vertical-align: middle;
+            opacity: 0.9;
+        }
+
+        /* Hero overlay for readability */
+        #banner {
+            position: relative;
+            overflow: hidden;
+        }
+        #banner:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(0,0,0,0.65) 0%,
+                rgba(0,0,0,0.55) 45%,
+                rgba(0,0,0,0.70) 100%
+            );
+            pointer-events: none;
+            z-index: 1;
+        }
+        #banner .inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Slightly tighter hero paragraph */
+        #banner p {
+            max-width: 66ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+    <!-- (4) JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://ness.vet/#website",
+          "url": "https://ness.vet/",
+          "name": "NESS.VET",
+          "description": "Veteran Senior Systems Engineer and CISSP specializing in RF & datalink systems integration, secure mission architectures, and ground station operational support.",
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://ness.vet/#person",
+          "name": "Ness",
+          "url": "https://ness.vet/",
+          "jobTitle": "Senior Systems Engineer",
+          "description": "Veteran Senior Systems Engineer and CISSP specializing in RF & datalink systems integration, secure mission architectures, and ground station operational support.",
+          "knowsAbout": [
+            "RF Systems Integration",
+            "Tactical Datalinks",
+            "Ground Station Operational Support",
+            "Secure Architecture",
+            "Systems Engineering",
+            "Cybersecurity"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/nguyenl1904"
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="landing is-preload">
-
 <div id="page-wrapper">
 
-<header id="header" class="alt">
-    <h1><a href="index.html">NESS</a></h1>
-    <nav id="nav">
-        <ul>
-            <li class="special">
-                <a href="#menu" class="menuToggle"><span>Menu</span></a>
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="insights.html">Insights</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-<section id="banner" style="background-image: url('images/image1.jpg'); background-size: cover; background-position: center;">
-    <div class="inner">
-        <h2>Veteran | Senior Systems Engineer | CISSP</h2>
-        <p>
-            Defense Systems Integration • Secure Architecture • Mission-Critical Engineering<br />
-            Delivering disciplined execution across cybersecurity, RF environments, and complex defense programs.
-        </p>
-        <ul class="actions special">
-            <li><a href="#contact" class="button primary">Strategic Collaboration</a></li>
-            <li><a href="insights.html" class="button">Read Insights</a></li>
-        </ul>
-    </div>
-</section>
-
-<section class="wrapper style2 special">
-    <div class="inner">
-        <p style="margin:0; font-weight:600; letter-spacing:0.12em;">
-            Senior Systems Engineer &nbsp;|&nbsp; CISSP &nbsp;|&nbsp; MS – Unmanned Systems &nbsp;|&nbsp; PMP &nbsp;|&nbsp; U.S. Marine Corps Veteran
-        </p>
-    </div>
-</section>
-
-<section class="wrapper style2 special">
-    <div class="inner">
-        <header class="major">
-            <h2>Operational Focus Areas</h2>
-        </header>
-        <ul class="features">
-            <li class="icon solid fa-shield-alt">
-                <h3>Secure & Resilient Architectures</h3>
-                <p>Security-forward system design aligned to mission assurance and operational realities.</p>
-            </li>
-            <li class="icon solid fa-satellite-dish">
-                <h3>Defense Systems Integration</h3>
-                <p>Bridging engineering, field deployment, and program leadership to deliver operational capability.</p>
-            </li>
-            <li class="icon solid fa-network-wired">
-                <h3>High-Security Execution</h3>
-                <p>Coordinating multidisciplinary teams under performance and security constraints.</p>
-            </li>
-        </ul>
-    </div>
-</section>
-
-<section class="wrapper alt style2">
-    <section class="spotlight">
-        <div class="image"><img src="images/pic01.jpg" alt="" /></div>
-        <div class="content">
-            <h2>Professional Experience</h2>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1><a href="index.html">NESS</a></h1>
+        <nav id="nav">
             <ul>
-                <li>U.S. Marine Corps — Aviation Systems & Avionics</li>
-                <li>Defense Communications — RF Field Operations</li>
-                <li>Advanced Defense Programs — Systems Integration</li>
-                <li>Enterprise & Mission Systems — Senior Engineering Leadership</li>
+                <li class="special">
+                    <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                    <div id="menu">
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="insights.html">Insights</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner / Hero -->
+    <section id="banner" style="background-image: url('images/image1.jpg'); background-size: cover; background-position: center;">
+        <div class="inner">
+            <h2>RF Communications & Tactical Datalink Systems | Secure Mission Engineering | CISSP | U.S. Marine Corps Veteran</h2>
+            <p>
+                Secure Mission Architectures • Ground Station Operational Support • High-Reliability Engineering<br />
+                Delivering disciplined execution across mission-critical communications infrastructure and complex defense environments.
+            </p>
+            <ul class="actions special">
+                <li><a href="#contact" class="button primary">Strategic Collaboration</a></li>
+                <li><a href="insights.html" class="button">Read Insights</a></li>
+            </ul>
+        </div>
+        <a href="#focus" class="more scrolly">Learn More</a>
+    </section>
+
+    <!-- Credentials Strip -->
+    <section class="wrapper style2 special">
+        <div class="inner">
+            <p style="margin:0; font-weight:600; letter-spacing:0.12em;">
+                Senior Systems Engineer &nbsp;|&nbsp; CISSP &nbsp;|&nbsp; MS – Unmanned Systems &nbsp;|&nbsp; PMP &nbsp;|&nbsp; U.S. Marine Corps Veteran
+            </p>
+        </div>
+    </section>
+
+    <!-- Operational Focus Areas -->
+    <section id="focus" class="wrapper style2 special">
+        <div class="inner">
+            <header class="major">
+                <h2>Operational Focus Areas</h2>
+            </header>
+            <ul class="features">
+                <li class="icon solid fa-satellite-dish">
+                    <h3>RF & Datalink Systems</h3>
+                    <p>
+                        Integration and sustainment across distributed RF infrastructure and tactical datalink environments
+                        where reliability and timing matter.
+                    </p>
+                </li>
+                <li class="icon solid fa-server">
+                    <h3>Ground Station Operational Support</h3>
+                    <p>
+                        Supporting high-availability ground systems where uptime, latency, and security posture directly
+                        impact mission execution.
+                    </p>
+                </li>
+                <li class="icon solid fa-shield-alt">
+                    <h3>Secure Architecture & Integration</h3>
+                    <p>
+                        Engineering trust boundaries, interface controls, and resilient design within complex defense programs
+                        and high-security environments.
+                    </p>
+                </li>
             </ul>
         </div>
     </section>
 
-    <section class="spotlight">
-        <div class="image"><img src="images/pic02.jpg" alt="" /></div>
-        <div class="content">
-            <h2>Operating Philosophy</h2>
-            <p>
-                Clarity over complexity. Outcomes over activity. Security as a design constraint —
-                not an afterthought.
-            </p>
+    <!-- Spotlights -->
+    <section class="wrapper alt style2">
+
+        <section class="spotlight">
+            <div class="image"><img src="images/pic01.jpg" alt="" /></div>
+            <div class="content">
+                <h2>Professional Experience</h2>
+                <ul>
+                    <li>U.S. Marine Corps — Aviation Systems & Avionics</li>
+                    <li>Defense Communications — RF Field Operations</li>
+                    <li>Ground Station Integration & Operational Sustainment</li>
+                    <li>Enterprise & Mission Systems — Senior Engineering Leadership</li>
+                </ul>
+                <ul class="actions">
+                    <li><a href="about.html" class="button">About</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="spotlight">
+            <div class="image"><img src="images/pic02.jpg" alt="" /></div>
+            <div class="content">
+                <h2>Operating Philosophy</h2>
+                <p>
+                    Clarity over complexity. Outcomes over activity. Security as a design constraint — not an afterthought.
+                    Structured execution aligned to mission assurance and operational readiness.
+                </p>
+            </div>
+        </section>
+
+        <section class="spotlight">
+            <div class="image"><img src="images/pic03.jpg" alt="" /></div>
+            <div class="content">
+                <h2>Engagement Model</h2>
+                <p>
+                    Select engagements only. Available for RF & datalink integration advisory, ground system support strategy,
+                    and secure architecture reviews within high-reliability defense environments.
+                </p>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="wrapper style2 special">
+        <div class="inner">
+            <header class="major">
+                <h2>Contact</h2>
+                <p>
+                    For consulting inquiries or collaboration:
+                    <a href="mailto:contact@ness.vet">contact@ness.vet</a>
+                </p>
+            </header>
+
+            <ul class="actions special">
+                <li><a href="mailto:contact@ness.vet" class="button primary">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/nguyenl1904" class="button">LinkedIn</a></li>
+            </ul>
         </div>
     </section>
 
-    <section class="spotlight">
-        <div class="image"><img src="images/pic03.jpg" alt="" /></div>
-        <div class="content">
-            <h2>Engagement Model</h2>
-            <p>
-                Select engagements only. Available for strategic advisory,
-                secure architecture reviews, and mission-focused systems consulting.
-            </p>
-        </div>
-    </section>
-</section>
-
-<section id="contact" class="wrapper style2 special">
-    <div class="inner">
-        <header class="major">
-            <h2>Contact</h2>
-            <p>
-                For consulting inquiries or collaboration:
-                <a href="mailto:contact@ness.vet">contact@ness.vet</a>
-            </p>
-        </header>
-    </div>
-</section>
-
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="mailto:contact@ness.vet" class="icon solid fa-envelope"></a></li>
-        <li><a href="https://www.linkedin.com/in/nguyenl1904" class="icon brands fa-linkedin"></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>&copy; 2026 ness.vet</li>
-        <li>Defense Systems Integration | Secure Architecture | Mission-Critical Engineering</li>
-    </ul>
-</footer>
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="mailto:contact@ness.vet" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://www.linkedin.com/in/nguyenl1904" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; 2026 ness.vet</li>
+            <li>RF & Datalink Systems | Secure Architecture | Ground Mission Support</li>
+        </ul>
+    </footer>
 
 </div>
 

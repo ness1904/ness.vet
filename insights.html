@@ -5,82 +5,203 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <meta name="description" content="Insights on defense systems integration, secure architecture, and mission-critical engineering." />
+    <meta name="description" content="Insights on RF & datalink systems integration, ground station operational support, secure architecture, and high-reliability engineering in defense environments." />
+    <meta name="keywords" content="RF systems, datalink, ground station, systems integration, secure architecture, CISSP, defense engineering, mission communications" />
 
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/overrides.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <!-- Active menu highlight -->
+    <style>
+        #menu ul li.active > a {
+            font-weight: 700;
+            opacity: 1;
+        }
+    </style>
+
+    <!-- JSON-LD structured data (Article list page) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Insights | NESS.VET",
+      "url": "https://ness.vet/insights.html",
+      "about": [
+        "RF Systems Integration",
+        "Tactical Datalinks",
+        "Ground Station Operational Support",
+        "Secure Architecture",
+        "High-Reliability Engineering"
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "NESS.VET",
+        "url": "https://ness.vet/"
+      }
+    }
+    </script>
 </head>
 
 <body class="is-preload">
-
 <div id="page-wrapper">
 
-<header id="header">
-    <h1><a href="index.html">NESS</a></h1>
-    <nav id="nav">
-        <ul>
-            <li class="special">
-                <a href="#menu" class="menuToggle"><span>Menu</span></a>
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="insights.html">Insights</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </li>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">NESS</a></h1>
+        <nav id="nav">
+            <ul>
+                <li class="special">
+                    <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="active"><a href="insights.html">Insights</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <section class="wrapper style2">
+        <div class="inner">
+
+            <header class="major">
+                <h2>Insights</h2>
+                <p>
+                    Short, practical perspectives on RF & datalink integration, ground station operational support,
+                    and secure mission architectures — written for high-reliability defense environments.
+                </p>
+            </header>
+
+            <!-- Quick index -->
+            <section>
+                <h3>Topics</h3>
+                <ul>
+                    <li><a href="#insight-1">RF & Datalink Resilience</a></li>
+                    <li><a href="#insight-2">Ground Station Operational Support</a></li>
+                    <li><a href="#insight-3">Integration Is Where Security Breaks</a></li>
+                    <li><a href="#insight-4">High-Reliability Delivery</a></li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <!-- Insight 1 -->
+            <section id="insight-1">
+                <h3>RF & Datalink Systems: Resilience Is an Engineering Requirement</h3>
+                <p>
+                    Mission communications live under constraints that typical enterprise networks don’t: contested spectrum,
+                    limited link margin, strict timing, and operational dependencies that cascade quickly when performance degrades.
+                    Resilience isn’t a “nice-to-have” — it’s a system requirement.
+                </p>
+                <p>
+                    The most reliable programs treat resilience as an end-to-end design goal:
+                    configuration baselines, redundancy planning, failure-mode definitions, and validation that reflects real-world conditions.
+                    If you can’t describe how the system behaves when links degrade, time drifts, or components fail, you don’t have an integration plan —
+                    you have a hope plan.
+                </p>
+                <p style="opacity: 0.85; margin-bottom: 0;">
+                    <strong>Practical lens:</strong> define the operationally critical paths, identify constraints, and validate behavior under degradation —
+                    not just under ideal test conditions.
+                </p>
+            </section>
+
+            <hr />
+
+            <!-- Insight 2 -->
+            <section id="insight-2">
+                <h3>Ground Station Operational Support: Readiness Is a Daily Discipline</h3>
+                <p>
+                    Ground stations are not “set and forget.” Operational support lives at the intersection of availability,
+                    security posture, and recoverability. The mission doesn’t care that the architecture looks clean — it cares that the system stays up,
+                    stays consistent, and fails predictably when it must fail.
+                </p>
+                <p>
+                    The strongest sustainment posture comes from repeatable processes: configuration control, clear escalation paths, disciplined logging,
+                    and purposeful recovery drills. If failure recovery is only discussed in documents, it’s not real. The teams that win are the teams
+                    that can restore capability quickly and confidently.
+                </p>
+                <p style="opacity: 0.85; margin-bottom: 0;">
+                    <strong>Practical lens:</strong> readiness = monitoring + configuration integrity + recovery rehearsals + communication discipline.
+                </p>
+            </section>
+
+            <hr />
+
+            <!-- Insight 3 -->
+            <section id="insight-3">
+                <h3>Integration Is Where Security Breaks</h3>
+                <p>
+                    Many “security incidents” are integration incidents. Systems fail at boundaries: unclear trust zones, inconsistent identity assumptions,
+                    undocumented interfaces, and temporary access that becomes permanent. When integration accelerates, the controls that protect the mission
+                    often lag behind.
+                </p>
+                <p>
+                    The fix is not more paperwork — it’s clear engineering ownership. Define interface authority, data handling rules, authentication expectations,
+                    and logging requirements before deployment. Security should be validated as part of integration acceptance criteria, not deferred until later.
+                </p>
+                <p style="opacity: 0.85; margin-bottom: 0;">
+                    <strong>Practical lens:</strong> treat every interface like a contract: owner, trust boundary, failure behavior, audit evidence.
+                </p>
+            </section>
+
+            <hr />
+
+            <!-- Insight 4 -->
+            <section id="insight-4">
+                <h3>High-Reliability Delivery: Reduce Ambiguity Early</h3>
+                <p>
+                    High-security, mission-critical programs reward clarity. The fastest teams aren’t the ones that move recklessly —
+                    they’re the ones that remove ambiguity early: who decides, what “done” means, what risks are accepted, and what changes require approval.
+                </p>
+                <p>
+                    I’ve found that disciplined delivery comes down to a few non-negotiables:
+                    consistent communication, controlled change management, measurable acceptance criteria, and a bias toward operational reality over perfect theory.
+                    Reliability is built through repetition and evidence — not optimism.
+                </p>
+                <p style="opacity: 0.85; margin-bottom: 0;">
+                    <strong>Practical lens:</strong> define “done,” document decisions, enforce config control, and validate with real constraints.
+                </p>
+            </section>
+
+            <hr />
+
+            <!-- CTA -->
+            <section>
+                <header class="major" style="margin-bottom: 1em;">
+                    <h2>Want to Collaborate?</h2>
+                    <p>
+                        If you’re leading a mission communications or ground systems effort and need integration discipline,
+                        secure architecture perspective, or operational support strategy, reach out.
+                    </p>
+                </header>
+                <ul class="actions special">
+                    <li><a href="index.html#contact" class="button primary">Contact</a></li>
+                    <li><a href="about.html" class="button">About</a></li>
+                </ul>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="mailto:contact@ness.vet" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://www.linkedin.com/in/nguyenl1904" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
         </ul>
-    </nav>
-</header>
-
-<section class="wrapper style2">
-    <div class="inner">
-        <header class="major">
-            <h2>Insights</h2>
-            <p>Practical perspectives on secure integration and mission-critical delivery.</p>
-        </header>
-
-        <section>
-            <h3>Securing Distributed RF Infrastructure</h3>
-            <p>
-                Distributed RF environments introduce both network and mission risk.
-                Security must be engineered as a system constraint, not layered on after deployment.
-            </p>
-        </section>
-
-        <hr />
-
-        <section>
-            <h3>Integration Is a Security Problem</h3>
-            <p>
-                Most security failures occur at system boundaries.
-                Clear trust zones, identity enforcement, and defined rollback plans reduce operational exposure.
-            </p>
-        </section>
-
-        <hr />
-
-        <section>
-            <h3>High-Reliability Execution in High-Security Environments</h3>
-            <p>
-                High-security programs reward clarity. Define decision ownership,
-                define “done,” and reduce ambiguity before field deployment.
-            </p>
-        </section>
-
-    </div>
-</section>
-
-<footer id="footer">
-    <ul class="icons">
-        <li><a href="mailto:contact@ness.vet" class="icon solid fa-envelope"></a></li>
-        <li><a href="https://www.linkedin.com/in/nguyenl1904" class="icon brands fa-linkedin"></a></li>
-    </ul>
-    <ul class="copyright">
-        <li>&copy; 2026 ness.vet</li>
-    </ul>
-</footer>
+        <ul class="copyright">
+            <li>&copy; 2026 ness.vet</li>
+            <li>RF & Datalink Systems | Secure Architecture | Ground Mission Support</li>
+        </ul>
+    </footer>
 
 </div>
 
