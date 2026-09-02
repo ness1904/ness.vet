@@ -1,140 +1,161 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Services | NESS.VET</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Consulting services in mission communications, secure systems architecture, program governance, and operational resilience for defense environments.">
+<title>Services | NESS.VET</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-    <meta name="description" content="Consulting services in mission communications, secure systems architecture, program governance, and operational resilience for defense environments." />
-    <meta name="keywords" content="mission communications, RF, datalink, secure architecture, program governance, operational resilience, consulting, CISSP, PMP" />
+:root{
+  --bg:#12161a; --panel:#171c21; --grid:#1f262c; --border:#2a3138; --border-strong:#3a434c;
+  --text:#e6e9eb; --text-dim:#8d98a1; --text-faint:#5c6870; --amber:#e8a33d; --teal:#4fa8a0; --max:1120px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  background:
+    linear-gradient(var(--bg),var(--bg)),
+    repeating-linear-gradient(0deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 48px),
+    repeating-linear-gradient(90deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 48px);
+  color:var(--text); font-family:'Inter', sans-serif; font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--text); }
+.mono{ font-family:'JetBrains Mono', monospace; }
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/overrides.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:22px 0; border-bottom:1px solid var(--border); }
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand-mark{ width:30px; height:30px; border:1.5px solid var(--amber); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:14px; color:var(--amber); }
+.brand-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17px; letter-spacing:0.02em; }
+.nav-links{ display:flex; gap:32px; font-size:14px; color:var(--text-dim); }
+.nav-links a:hover{ color:var(--text); }
+.nav-links a.active{ color:var(--amber); }
+.status{ display:flex; align-items:center; gap:8px; font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-dim); }
+.status-dot{ width:6px; height:6px; border-radius:50%; background:var(--teal); box-shadow:0 0 6px var(--teal); }
+@media (max-width:760px){ .nav-links{ display:none; } }
 
-    <style>
-        #menu ul li.active > a {
-            font-weight: 700;
-            opacity: 1;
-        }
-    </style>
+.titleblock{ border-bottom:1px solid var(--border); padding:9px 0; font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-faint); letter-spacing:0.03em; }
+.titleblock .wrap{ display:flex; gap:28px; flex-wrap:wrap; }
+.titleblock span b{ color:var(--text-dim); font-weight:500; }
+
+.page-head{ padding:64px 0 48px; border-bottom:1px solid var(--border); }
+.eyebrow{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); margin-bottom:14px; letter-spacing:0.02em; }
+.page-head h1{ font-size:38px; margin-bottom:16px; max-width:22ch; }
+.page-head p.lead{ font-size:16.5px; color:var(--text-dim); max-width:60ch; }
+
+.section{ padding:64px 0; border-top:1px solid var(--border); }
+.section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:36px; flex-wrap:wrap; }
+.section-head h2{ font-size:24px; }
+.section-tag{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-faint); }
+
+.svc-list{ display:flex; flex-direction:column; }
+.svc-item{ padding:28px 0; border-bottom:1px solid var(--border); display:grid; grid-template-columns:220px 1fr; gap:28px; }
+.svc-item:first-child{ border-top:1px solid var(--border); }
+@media (max-width:700px){ .svc-item{ grid-template-columns:1fr; gap:10px; } }
+.svc-tag{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); padding-top:3px; }
+.svc-item h3{ font-size:18px; margin-bottom:8px; }
+.svc-item p{ color:var(--text-dim); font-size:15px; max-width:60ch; }
+
+.spec-table{ width:100%; border-collapse:collapse; font-size:14.5px; }
+.spec-table tr{ border-bottom:1px solid var(--border); }
+.spec-table tr:first-child{ border-top:1px solid var(--border); }
+.spec-table td{ padding:18px 10px; vertical-align:top; }
+.spec-table td.fmt{ font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--amber); width:260px; white-space:nowrap; }
+.spec-table td.desc{ color:var(--text-dim); }
+
+.note{ font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-faint); border-left:2px solid var(--border-strong); padding-left:14px; margin-top:24px; max-width:60ch; }
+
+.cta-row{ display:flex; align-items:center; gap:26px; flex-wrap:wrap; margin-top:28px; }
+.btn{ display:inline-block; padding:13px 24px; border:1.5px solid var(--amber); color:var(--amber); font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:14.5px; transition:background .15s ease, color .15s ease; }
+.btn:hover{ background:var(--amber); color:#14181c; }
+.link-secondary{ font-size:14.5px; color:var(--text-dim); border-bottom:1px solid var(--border-strong); padding-bottom:2px; }
+.link-secondary:hover{ color:var(--text); border-color:var(--text-dim); }
+
+footer{ border-top:1px solid var(--border); padding:26px 0; font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-faint); }
+footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+</style>
 </head>
+<body>
 
-<body class="is-preload">
-    <div id="page-wrapper">
+<div class="wrap nav">
+  <div class="brand"><div class="brand-mark">N</div><div class="brand-name">NESS</div></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="insights.html">Insights</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="status"><span class="status-dot"></span>AVAILABLE FOR ENGAGEMENTS</div>
+</div>
 
-        <header id="header">
-            <h1><a href="index.html">NESS</a></h1>
-            <nav id="nav">
-                <ul>
-                    <li class="special">
-                        <a href="#menu" class="menuToggle"><span>Menu</span></a>
-                        <div id="menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="insights.html">Insights</a></li>
-                                <li class="active"><a href="services.html">Services</a></li>
-                                <li><a href="index.html#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+<div class="titleblock">
+  <div class="wrap">
+    <span><b>DOC</b> NESS–SERVICES</span>
+    <span><b>REV</b> 2026.09</span>
+    <span><b>SCOPE</b> Consulting Offerings &amp; Engagement Formats</span>
+    <span><b>CLASS</b> UNCLASSIFIED — PUBLIC</span>
+  </div>
+</div>
 
-        <section class="wrapper style2">
-            <div class="inner">
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">SERVICES</div>
+    <h1>Consulting for programs where the integration is the risk.</h1>
+    <p class="lead">Focused on secure architecture, program governance, operational resilience, and integration risk reduction for defense programs operating in complex, mission-critical communications environments.</p>
+  </div>
+</section>
 
-                <header class="major">
-                    <h2>Services</h2>
-                    <p>
-                        Consulting for defense programs operating in complex, mission-critical communications environments.
-                        Focused on secure architecture, program governance, operational resilience, and integration risk reduction.
-                    </p>
-                </header>
-
-                <section>
-                    <h3>Mission Communications Consulting</h3>
-                    <p>
-                        Strategic guidance for RF communications, tactical datalink systems, and distributed mission infrastructure.
-                        Emphasis on resilience, scalability, operational continuity, and clear system boundaries.
-                    </p>
-                </section>
-
-                <hr />
-
-                <section>
-                    <h3>Secure Architecture & Risk Review</h3>
-                    <p>
-                        Independent evaluation of trust boundaries, identity controls, interface governance, and integration points.
-                        Designed to surface systemic security and operational risks early—before they become mission-impacting failures.
-                    </p>
-                </section>
-
-                <hr />
-
-                <section>
-                    <h3>Program Governance & Delivery</h3>
-                    <p>
-                        Program management applied to technical execution: decision clarity, stakeholder alignment, measurable acceptance criteria,
-                        controlled change management, and risk-driven delivery in high-reliability environments.
-                    </p>
-                </section>
-
-                <hr />
-
-                <section>
-                    <h3>Operational Readiness & Sustainment Strategy</h3>
-                    <p>
-                        Advisory support for ground station and mission infrastructure readiness: configuration governance, recoverability planning,
-                        sustainment models, and operational procedures that support high availability and mission continuity.
-                    </p>
-                </section>
-
-                <hr />
-
-                <section>
-                    <h3>Engagement Formats</h3>
-                    <ul>
-                        <li><strong>Architecture & Risk Assessment:</strong> targeted review with findings and recommended actions.</li>
-                        <li><strong>Executive Technical Briefing:</strong> decision-ready synthesis for program leadership.</li>
-                        <li><strong>Integration Risk Reduction:</strong> short-term advisory support during critical integration phases.</li>
-                        <li><strong>Readiness Review:</strong> operational posture assessment focused on sustainment and recoverability.</li>
-                    </ul>
-                    <p style="opacity: 0.85; margin-top: 1em;">
-                        Note: No sensitive program details are published. Engagements remain aligned with operational security and contractual boundaries.
-                    </p>
-
-                    <ul class="actions special" style="margin-top: 1.5em;">
-                        <li><a href="index.html#contact" class="button primary">Request Consultation</a></li>
-                        <li><a href="insights.html" class="button">View Insights</a></li>
-                    </ul>
-                </section>
-
-            </div>
-        </section>
-
-        <footer id="footer">
-            <ul class="icons">
-                <li><a href="mailto:contact@ness.vet" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                <li><a href="https://www.linkedin.com/in/nguyenl1904" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; 2026 ness.vet</li>
-                <li>Mission Communications | Secure Systems | Program Governance</li>
-            </ul>
-        </footer>
-
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What I advise on</h2><div class="section-tag">CAPABILITIES</div></div>
+    <div class="svc-list">
+      <div class="svc-item">
+        <div class="svc-tag">COMMS</div>
+        <div><h3>Mission Communications Consulting</h3><p>Strategic guidance for RF communications, tactical datalink systems, and distributed mission infrastructure. Emphasis on resilience, scalability, operational continuity, and clear system boundaries.</p></div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-tag">SEC</div>
+        <div><h3>Secure Architecture &amp; Risk Review</h3><p>Independent evaluation of trust boundaries, identity controls, interface governance, and integration points — designed to surface systemic security and operational risks before they become mission-impacting failures.</p></div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-tag">GOV</div>
+        <div><h3>Program Governance &amp; Delivery</h3><p>Program management applied to technical execution: decision clarity, stakeholder alignment, measurable acceptance criteria, controlled change management, and risk-driven delivery in high-reliability environments.</p></div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-tag">OPS</div>
+        <div><h3>Operational Readiness &amp; Sustainment Strategy</h3><p>Advisory support for ground station and mission infrastructure readiness: configuration governance, recoverability planning, sustainment models, and operational procedures that support high availability and mission continuity.</p></div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Engagement formats</h2><div class="section-tag">HOW WE'D WORK TOGETHER</div></div>
+    <table class="spec-table">
+      <tr><td class="fmt">ARCHITECTURE &amp; RISK ASSESSMENT</td><td class="desc">Targeted review with findings and recommended actions.</td></tr>
+      <tr><td class="fmt">EXECUTIVE TECHNICAL BRIEFING</td><td class="desc">Decision-ready synthesis for program leadership.</td></tr>
+      <tr><td class="fmt">INTEGRATION RISK REDUCTION</td><td class="desc">Short-term advisory support during critical integration phases.</td></tr>
+      <tr><td class="fmt">READINESS REVIEW</td><td class="desc">Operational posture assessment focused on sustainment and recoverability.</td></tr>
+    </table>
+    <div class="note">NOTE: No sensitive program details are published. Engagements remain aligned with operational security and contractual boundaries.</div>
+    <div class="cta-row">
+      <a href="index.html#contact" class="btn">Request Consultation</a>
+      <a href="insights.html" class="link-secondary">View Insights</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 NESS.VET</span>
+    <span>MISSION COMMUNICATIONS · SECURE SYSTEMS · PROGRAM GOVERNANCE</span>
+  </div>
+</footer>
 
 </body>
 </html>

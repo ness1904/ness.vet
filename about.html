@@ -1,175 +1,173 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>About | NESS.VET</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="About Ness — Veteran Senior Systems Engineer, CISSP & PMP focused on mission communications, secure architecture, and operational resilience.">
+<title>About | NESS.VET</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-    <meta name="description" content="About Ness — Veteran Senior Systems Engineer, CISSP & PMP focused on mission communications, secure architecture, and operational resilience." />
-    <meta name="keywords" content="mission communications, RF systems, datalink, secure architecture, program governance, CISSP, PMP, veteran, defense consulting" />
+:root{
+  --bg:#12161a; --panel:#171c21; --grid:#1f262c; --border:#2a3138; --border-strong:#3a434c;
+  --text:#e6e9eb; --text-dim:#8d98a1; --text-faint:#5c6870; --amber:#e8a33d; --teal:#4fa8a0; --max:1120px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  background:
+    linear-gradient(var(--bg),var(--bg)),
+    repeating-linear-gradient(0deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 48px),
+    repeating-linear-gradient(90deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 48px);
+  color:var(--text); font-family:'Inter', sans-serif; font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--text); }
+.mono{ font-family:'JetBrains Mono', monospace; }
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/overrides.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:22px 0; border-bottom:1px solid var(--border); }
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand-mark{ width:30px; height:30px; border:1.5px solid var(--amber); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:14px; color:var(--amber); }
+.brand-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17px; letter-spacing:0.02em; }
+.nav-links{ display:flex; gap:32px; font-size:14px; color:var(--text-dim); }
+.nav-links a:hover{ color:var(--text); }
+.nav-links a.active{ color:var(--amber); }
+.status{ display:flex; align-items:center; gap:8px; font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-dim); }
+.status-dot{ width:6px; height:6px; border-radius:50%; background:var(--teal); box-shadow:0 0 6px var(--teal); }
+@media (max-width:760px){ .nav-links{ display:none; } }
 
-    <style>
-        #menu ul li.active > a {
-            font-weight: 700;
-            opacity: 1;
-        }
-    </style>
+.titleblock{ border-bottom:1px solid var(--border); padding:9px 0; font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-faint); letter-spacing:0.03em; }
+.titleblock .wrap{ display:flex; gap:28px; flex-wrap:wrap; }
+.titleblock span b{ color:var(--text-dim); font-weight:500; }
+
+.page-head{ padding:64px 0 48px; border-bottom:1px solid var(--border); }
+.eyebrow{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); margin-bottom:14px; letter-spacing:0.02em; }
+.page-head h1{ font-size:38px; margin-bottom:16px; max-width:20ch; }
+.page-head p.lead{ font-size:16.5px; color:var(--text-dim); max-width:60ch; }
+
+.section{ padding:64px 0; border-top:1px solid var(--border); }
+.section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:36px; flex-wrap:wrap; }
+.section-head h2{ font-size:24px; }
+.section-tag{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-faint); }
+.section p{ color:var(--text-dim); max-width:70ch; margin-bottom:16px; font-size:15.5px; }
+.section p:last-child{ margin-bottom:0; }
+
+.panels{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+@media (max-width:900px){ .panels{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .panels{ grid-template-columns:1fr; } }
+.panel{ background:var(--bg); padding:26px 22px; }
+.panel-tag{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); margin-bottom:14px; }
+.panel h3{ font-size:15.5px; margin-bottom:10px; }
+.panel p{ font-size:13.5px; color:var(--text-dim); margin-bottom:0; }
+
+.spec-table{ width:100%; border-collapse:collapse; font-size:14.5px; }
+.spec-table tr{ border-bottom:1px solid var(--border); }
+.spec-table tr:first-child{ border-top:1px solid var(--border); }
+.spec-table td{ padding:16px 10px; vertical-align:top; }
+.spec-table td.fmt{ font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--amber); width:200px; white-space:nowrap; }
+.spec-table td.desc{ color:var(--text-dim); }
+
+.note{ font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-faint); border-left:2px solid var(--border-strong); padding-left:14px; margin-top:24px; max-width:60ch; }
+
+.cta-row{ display:flex; align-items:center; gap:26px; flex-wrap:wrap; margin-top:28px; }
+.btn{ display:inline-block; padding:13px 24px; border:1.5px solid var(--amber); color:var(--amber); font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:14.5px; transition:background .15s ease, color .15s ease; }
+.btn:hover{ background:var(--amber); color:#14181c; }
+.link-secondary{ font-size:14.5px; color:var(--text-dim); border-bottom:1px solid var(--border-strong); padding-bottom:2px; }
+.link-secondary:hover{ color:var(--text); border-color:var(--text-dim); }
+
+footer{ border-top:1px solid var(--border); padding:26px 0; font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-faint); }
+footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+</style>
 </head>
+<body>
 
-<body class="is-preload">
-    <div id="page-wrapper">
+<div class="wrap nav">
+  <div class="brand"><div class="brand-mark">N</div><div class="brand-name">NESS</div></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="insights.html">Insights</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="status"><span class="status-dot"></span>AVAILABLE FOR ENGAGEMENTS</div>
+</div>
 
-        <header id="header">
-            <h1><a href="index.html">NESS</a></h1>
-            <nav id="nav">
-                <ul>
-                    <li class="special">
-                        <a href="#menu" class="menuToggle"><span>Menu</span></a>
-                        <div id="menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li class="active"><a href="about.html">About</a></li>
-                                <li><a href="insights.html">Insights</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="index.html#contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+<div class="titleblock">
+  <div class="wrap">
+    <span><b>DOC</b> NESS–ABOUT</span>
+    <span><b>REV</b> 2026.09</span>
+    <span><b>SCOPE</b> Background / Principles / Credentials</span>
+    <span><b>CLASS</b> UNCLASSIFIED — PUBLIC</span>
+  </div>
+</div>
 
-        <section class="wrapper style2">
-            <div class="inner">
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">ABOUT</div>
+    <h1>Veteran. Senior Systems Engineer. CISSP. PMP.</h1>
+    <p class="lead">Focused on mission communications, secure architectures, and disciplined delivery in high-reliability environments.</p>
+  </div>
+</section>
 
-                <header class="major">
-                    <h2>About</h2>
-                    <p>
-                        Veteran | Senior Systems Engineer | CISSP | PMP — focused on mission communications,
-                        secure architectures, and disciplined delivery in high-reliability environments.
-                    </p>
-                </header>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What I do</h2><div class="section-tag">OVERVIEW</div></div>
+    <p>I advise defense teams operating in mission-critical communications environments — where RF, tactical datalinks, and ground systems intersect with security constraints and program risk. My work emphasizes resilient architectures, integration clarity, and decision-ready guidance.</p>
+    <p>I bring a systems-first approach: define boundaries, reduce ambiguity early, align stakeholders, and validate readiness under real-world constraints.</p>
+  </div>
+</section>
 
-                <section>
-                    <h3>What I Do</h3>
-                    <p>
-                        I advise defense teams operating in mission-critical communications environments—where RF,
-                        tactical datalinks, and ground systems intersect with security constraints and program risk.
-                        My work emphasizes resilient architectures, integration clarity, and decision-ready guidance.
-                    </p>
-                    <p>
-                        I bring a systems-first approach: define boundaries, reduce ambiguity early, align stakeholders,
-                        and validate readiness under real-world constraints.
-                    </p>
-                </section>
-
-                <hr />
-
-                <section>
-                    <h3>Operating Principles</h3>
-                    <ul>
-                        <li><strong>Mission-first execution:</strong> outcomes and readiness over optics or activity.</li>
-                        <li><strong>Security as a constraint:</strong> identity, trust boundaries, and auditability designed in from day one.</li>
-                        <li><strong>Governance matters:</strong> decision authority, “definition of done,” and controlled change management.</li>
-                        <li><strong>Integration discipline:</strong> ownership, interfaces, and rollback plans defined before field deployment.</li>
-                    </ul>
-                </section>
-
-                <hr />
-
-                <!-- Background banner (nbanner) as subtle background -->
-                <section
-                    style="
-                        background-image: url('images/nbanner.jpg');
-                        background-size: cover;
-                        background-position: center;
-                        position: relative;
-                        padding: 4em 2em;
-                        border-radius: 0.5em;
-                        overflow: hidden;
-                    "
-                >
-                    <div
-                        style="
-                            position: absolute;
-                            inset: 0;
-                            background: rgba(0, 0, 0, 0.75);
-                            z-index: 1;
-                        "
-                    ></div>
-
-                    <div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto;">
-                        <h3 style="color: #fff;">Background</h3>
-
-                        <p style="color: #ddd;">
-                            My professional foundation was built in the United States Marine Corps supporting mission-critical
-                            aviation systems within operational squadrons. That environment demanded precision, accountability,
-                            and disciplined execution under pressure.
-                        </p>
-
-                        <p style="color: #ddd; margin-bottom: 0;">
-                            Since then, my work has expanded across RF field operations, datalink environments, and ground station
-                            operational support — translating operational realities into secure architectures, program clarity, and resilient delivery.
-                        </p>
-                    </div>
-                </section>
-
-                <hr />
-
-                <section>
-                    <h3>Credentials & Focus</h3>
-                    <ul>
-                        <li><strong>Certifications:</strong> CISSP, PMP</li>
-                        <li><strong>Education:</strong> MS — Unmanned Systems</li>
-                        <li><strong>Focus areas:</strong> mission communications, secure architecture, program governance, operational resilience</li>
-                    </ul>
-                    <p style="margin-top: 1em; opacity: 0.85;">
-                        Note: I do not publish sensitive program details. This site focuses on principles, operating approach, and professional capabilities.
-                    </p>
-                </section>
-
-                <hr />
-
-                <section>
-                    <h3>Engagement</h3>
-                    <p>
-                        I’m available for consulting engagements involving mission communications strategy, secure architecture review,
-                        integration risk reduction, and program governance during critical delivery phases.
-                    </p>
-
-                    <ul class="actions special">
-                        <li><a href="index.html#contact" class="button primary">Contact</a></li>
-                        <li><a href="services.html" class="button">Services</a></li>
-                    </ul>
-                </section>
-
-            </div>
-        </section>
-
-        <footer id="footer">
-            <ul class="icons">
-                <li><a href="mailto:contact@ness.vet" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                <li><a href="https://www.linkedin.com/in/nguyenl1904" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; 2026 ness.vet</li>
-                <li>Mission Communications | Secure Systems | Program Governance</li>
-            </ul>
-        </footer>
-
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Operating principles</h2><div class="section-tag">HOW I WORK</div></div>
+    <div class="panels">
+      <div class="panel"><div class="panel-tag">01</div><h3>Mission-first execution</h3><p>Outcomes and readiness over optics or activity.</p></div>
+      <div class="panel"><div class="panel-tag">02</div><h3>Security as a constraint</h3><p>Identity, trust boundaries, and auditability designed in from day one.</p></div>
+      <div class="panel"><div class="panel-tag">03</div><h3>Governance matters</h3><p>Decision authority, definition of done, and controlled change management.</p></div>
+      <div class="panel"><div class="panel-tag">04</div><h3>Integration discipline</h3><p>Ownership, interfaces, and rollback plans defined before field deployment.</p></div>
     </div>
+  </div>
+</section>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Background</h2><div class="section-tag">FOUNDATION</div></div>
+    <p>My professional foundation was built in the United States Marine Corps supporting mission-critical aviation systems within operational squadrons. That environment demanded precision, accountability, and disciplined execution under pressure.</p>
+    <p>Since then, my work has expanded across RF field operations, datalink environments, and ground station operational support — translating operational realities into secure architectures, program clarity, and resilient delivery.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Credentials &amp; focus</h2><div class="section-tag">SPEC</div></div>
+    <table class="spec-table">
+      <tr><td class="fmt">CERTIFICATIONS</td><td class="desc">CISSP, PMP</td></tr>
+      <tr><td class="fmt">EDUCATION</td><td class="desc">MS — Unmanned Systems</td></tr>
+      <tr><td class="fmt">FOCUS AREAS</td><td class="desc">Mission communications, secure architecture, program governance, operational resilience</td></tr>
+    </table>
+    <div class="note">NOTE: I do not publish sensitive program details. This site focuses on principles, operating approach, and professional capabilities.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Engagement</h2><div class="section-tag">AVAILABILITY</div></div>
+    <p>I'm available for consulting engagements involving mission communications strategy, secure architecture review, integration risk reduction, and program governance during critical delivery phases.</p>
+    <div class="cta-row">
+      <a href="index.html#contact" class="btn">Contact</a>
+      <a href="services.html" class="link-secondary">View Services</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 NESS.VET</span>
+    <span>MISSION COMMUNICATIONS · SECURE SYSTEMS · PROGRAM GOVERNANCE</span>
+  </div>
+</footer>
 
 </body>
 </html>
