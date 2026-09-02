@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NESS — Mission Systems & Program Integration Consulting</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#12161a;
+  --panel:#171c21;
+  --grid:#1f262c;
+  --border:#2a3138;
+  --border-strong:#3a434c;
+  --text:#e6e9eb;
+  --text-dim:#8d98a1;
+  --text-faint:#5c6870;
+  --amber:#e8a33d;
+  --teal:#4fa8a0;
+  --max:1120px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  background:
+    linear-gradient(var(--bg),var(--bg)),
+    repeating-linear-gradient(0deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 48px),
+    repeating-linear-gradient(90deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 48px);
+  background-blend-mode:normal;
+  color:var(--text);
+  font-family:'Inter', sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{
+  font-family:'Space Grotesk', sans-serif;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  color:var(--text);
+}
+
+.mono{ font-family:'JetBrains Mono', monospace; }
+
+a{ color:inherit; text-decoration:none; }
+:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
+
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+
+/* ---------- NAV ---------- */
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:22px 0;
+  border-bottom:1px solid var(--border);
+}
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand-mark{
+  width:30px; height:30px;
+  border:1.5px solid var(--amber);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:14px;
+  color:var(--amber);
+}
+.brand-name{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17px; letter-spacing:0.02em; }
+
+.nav-links{ display:flex; gap:32px; font-size:14px; color:var(--text-dim); }
+.nav-links a:hover{ color:var(--text); }
+
+.status{
+  display:flex; align-items:center; gap:8px;
+  font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-dim);
+}
+.status-dot{ width:6px; height:6px; border-radius:50%; background:var(--teal); box-shadow:0 0 6px var(--teal); }
+
+@media (max-width:760px){ .nav-links{ display:none; } }
+
+/* ---------- TITLE BLOCK STRIP ---------- */
+.titleblock{
+  border-bottom:1px solid var(--border);
+  padding:9px 0;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  color:var(--text-faint);
+  letter-spacing:0.03em;
+}
+.titleblock .wrap{ display:flex; gap:28px; flex-wrap:wrap; }
+.titleblock span b{ color:var(--text-dim); font-weight:500; }
+
+/* ---------- HERO ---------- */
+.hero{ padding:88px 0 100px; }
+.hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center; }
+@media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+
+.eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber);
+  margin-bottom:18px; letter-spacing:0.02em;
+}
+.hero h1{ font-size:44px; line-height:1.15; margin-bottom:20px; max-width:16ch;}
+.hero p.lead{ font-size:17px; color:var(--text-dim); max-width:46ch; margin-bottom:32px; }
+
+.manifest{
+  display:flex; flex-wrap:wrap; gap:10px 22px;
+  font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-dim);
+  margin-bottom:36px; padding-top:22px; border-top:1px solid var(--border);
+}
+.manifest span{ display:flex; align-items:center; gap:7px; }
+.manifest span::before{ content:''; width:5px; height:5px; background:var(--teal); display:inline-block; }
+
+.cta-row{ display:flex; align-items:center; gap:26px; flex-wrap:wrap; }
+.btn{
+  display:inline-block; padding:13px 24px;
+  border:1.5px solid var(--amber); color:var(--amber);
+  font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:14.5px;
+  transition:background .15s ease, color .15s ease;
+}
+.btn:hover{ background:var(--amber); color:#14181c; }
+.link-secondary{ font-size:14.5px; color:var(--text-dim); border-bottom:1px solid var(--border-strong); padding-bottom:2px; }
+.link-secondary:hover{ color:var(--text); border-color:var(--text-dim); }
+
+/* schematic */
+.schematic-frame{
+  position:relative; border:1px solid var(--border);
+  background:var(--panel);
+  padding:18px;
+}
+.corner{ position:absolute; width:14px; height:14px; }
+.corner::before,.corner::after{ content:''; position:absolute; background:var(--amber); }
+.corner.tl{ top:-1px; left:-1px; } .corner.tr{ top:-1px; right:-1px; }
+.corner.bl{ bottom:-1px; left:-1px; } .corner.br{ bottom:-1px; right:-1px; }
+.corner.tl::before,.corner.tr::before,.corner.bl::before,.corner.br::before{ width:14px; height:2px; top:0; }
+.corner.tl::after,.corner.tr::after,.corner.bl::after,.corner.br::after{ width:2px; height:14px; left:0; }
+.corner.tr::before{ right:0; } .corner.tr::after{ left:auto; right:0; }
+.corner.bl::before{ bottom:0; top:auto; } .corner.bl::after{ top:auto; bottom:0; }
+.corner.br::before{ bottom:0; top:auto; right:0; } .corner.br::after{ top:auto; bottom:0; left:auto; right:0; }
+
+.schematic-cap{
+  font-family:'JetBrains Mono', monospace; font-size:10.5px; color:var(--text-faint);
+  display:flex; justify-content:space-between; margin-top:12px;
+}
+
+.sig-line{ stroke-dasharray:400; stroke-dashoffset:400; animation:draw 1.8s ease forwards .3s; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+@media (prefers-reduced-motion: reduce){ .sig-line{ animation:none; stroke-dashoffset:0; } }
+
+/* ---------- PHOTO BAND ---------- */
+.photo-band{
+  position:relative;
+  min-height:420px;
+  background-image:
+    linear-gradient(180deg, rgba(18,22,26,0.25) 0%, rgba(18,22,26,0.9) 100%),
+    repeating-linear-gradient(0deg, rgba(31,38,44,0.4) 0, rgba(31,38,44,0.4) 1px, transparent 1px, transparent 48px),
+    repeating-linear-gradient(90deg, rgba(31,38,44,0.4) 0, rgba(31,38,44,0.4) 1px, transparent 1px, transparent 48px),
+    url('images/aircraft-photo.jpg');
+  background-size:cover, 48px 48px, 48px 48px, cover;
+  background-position:center 30%, center, center, center 30%;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:flex-end;
+}
+.photo-band-inner{ padding:32px 0; width:100%; }
+.photo-band .cap{
+  font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-dim);
+  display:flex; justify-content:space-between; border-top:1px solid var(--border-strong); padding-top:10px;
+}
+
+/* ---------- SECTION HEADERS ---------- */
+.section{ padding:80px 0; border-top:1px solid var(--border); }
+.section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:44px; flex-wrap:wrap; }
+.section-head h2{ font-size:28px; }
+.section-tag{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-faint); }
+
+/* ---------- FOCUS PANELS ---------- */
+.panels{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+@media (max-width:900px){ .panels{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .panels{ grid-template-columns:1fr; } }
+.panel{ background:var(--bg); padding:26px 22px; }
+.panel-tag{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber); margin-bottom:14px; }
+.panel h3{ font-size:16.5px; margin-bottom:10px; }
+.panel p{ font-size:14px; color:var(--text-dim); }
+
+/* ---------- TIMELINE ---------- */
+.timeline{ position:relative; padding-left:26px; }
+.timeline::before{ content:''; position:absolute; left:4px; top:6px; bottom:6px; width:1px; background:var(--border-strong); }
+.tl-item{ position:relative; padding-bottom:30px; }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-item::before{ content:''; position:absolute; left:-26px; top:5px; width:9px; height:9px; background:var(--teal); border:2px solid var(--bg); }
+.tl-item .role{ font-size:15.5px; font-weight:500; margin-bottom:3px; }
+.tl-item .desc{ font-size:13.5px; color:var(--text-dim); }
+
+/* ---------- PHILOSOPHY ---------- */
+.philosophy{ padding:70px 0; text-align:left; }
+.philosophy blockquote{
+  font-family:'Space Grotesk', sans-serif; font-weight:500; font-size:26px; line-height:1.4;
+  max-width:22ch; color:var(--text);
+}
+.philosophy blockquote em{ color:var(--amber); font-style:normal; }
+
+/* ---------- ENGAGEMENT TABLE ---------- */
+.spec-table{ width:100%; border-collapse:collapse; font-size:14.5px; }
+.spec-table tr{ border-bottom:1px solid var(--border); }
+.spec-table tr:first-child{ border-top:1px solid var(--border); }
+.spec-table td{ padding:18px 10px; vertical-align:top; }
+.spec-table td.fmt{ font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--amber); width:230px; white-space:nowrap; }
+.spec-table td.desc{ color:var(--text-dim); }
+
+/* ---------- CONTACT ---------- */
+.contact{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+@media (max-width:760px){ .contact{ grid-template-columns:1fr; } }
+.contact-panel{ border:1px solid var(--border); padding:32px; background:var(--panel); }
+.contact-panel h3{ font-size:19px; margin-bottom:14px; }
+.contact-panel p{ color:var(--text-dim); font-size:14.5px; margin-bottom:22px; }
+.contact-list{ display:flex; flex-direction:column; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13.5px; }
+.contact-list a{ color:var(--text-dim); border-bottom:1px solid var(--border-strong); width:fit-content; padding-bottom:2px; }
+.contact-list a:hover{ color:var(--amber); border-color:var(--amber); }
+
+/* ---------- FOOTER ---------- */
+footer{ border-top:1px solid var(--border); padding:26px 0; }
+footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+footer{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-faint); }
+</style>
+</head>
+<body>
+
+<div class="wrap nav">
+  <div class="brand">
+    <div class="brand-mark">N</div>
+    <div class="brand-name">NESS</div>
+  </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#insights">Insights</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="status"><span class="status-dot"></span>AVAILABLE FOR ENGAGEMENTS</div>
+</div>
+
+<div class="titleblock">
+  <div class="wrap">
+    <span><b>DOC</b> NESS–CONSULT</span>
+    <span><b>REV</b> 2026.09</span>
+    <span><b>SCOPE</b> Mission Comms / Secure Architecture / Program Governance</span>
+    <span><b>CLASS</b> UNCLASSIFIED — PUBLIC</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">MISSION SYSTEMS &amp; PROGRAM INTEGRATION</div>
+      <h1>Secure architectures for programs that can't afford to guess.</h1>
+      <p class="lead">Independent advisory support for defense programs navigating mission communications, secure integration, and delivery under pressure.</p>
+
+      <div class="manifest">
+        <span>CISSP</span>
+        <span>PMP</span>
+        <span>MS — Unmanned Systems</span>
+        <span>U.S. Marine Corps Veteran</span>
+      </div>
+
+      <div class="cta-row">
+        <a href="#contact" class="btn">Start a Conversation</a>
+        <a href="#services" class="link-secondary">View Services</a>
+      </div>
+    </div>
+
+    <div class="schematic-frame">
+      <div class="corner tl"></div><div class="corner tr"></div>
+      <div class="corner bl"></div><div class="corner br"></div>
+      <svg viewBox="0 0 340 260" width="100%" height="auto" style="display:block;">
+        <!-- grid dots -->
+        <g fill="#2a3138">
+          <circle cx="20" cy="20" r="1.4"/><circle cx="320" cy="20" r="1.4"/>
+          <circle cx="20" cy="240" r="1.4"/><circle cx="320" cy="240" r="1.4"/>
+        </g>
+        <!-- trust boundary -->
+        <rect x="40" y="140" width="120" height="80" fill="none" stroke="#3a434c" stroke-width="1" stroke-dasharray="3 4"/>
+        <text x="46" y="132" font-family="JetBrains Mono, monospace" font-size="9" fill="#5c6870">TRUST BOUNDARY</text>
+
+        <!-- ground station node -->
+        <circle cx="80" cy="180" r="5" fill="#4fa8a0"/>
+        <path d="M65 195 Q80 175 95 195" fill="none" stroke="#4fa8a0" stroke-width="1.3"/>
+        <text x="60" y="212" font-family="JetBrains Mono, monospace" font-size="9" fill="#8d98a1">GS-01</text>
+
+        <!-- link line -->
+        <line class="sig-line" x1="88" y1="172" x2="230" y2="78" stroke="#e8a33d" stroke-width="1.4" stroke-dasharray="4 3"/>
+
+        <!-- aircraft node -->
+        <polygon points="230,68 244,86 216,86" fill="none" stroke="#e8a33d" stroke-width="1.4"/>
+        <text x="238" y="64" font-family="JetBrains Mono, monospace" font-size="9" fill="#8d98a1">AC-114</text>
+
+        <!-- signal arcs -->
+        <path d="M120 165 Q150 130 190 108" fill="none" stroke="#3a434c" stroke-width="1"/>
+        <text x="130" y="150" font-family="JetBrains Mono, monospace" font-size="8" fill="#5c6870">RF DATALINK</text>
+
+        <!-- secondary node -->
+        <rect x="140" y="180" width="16" height="16" fill="none" stroke="#8d98a1" stroke-width="1"/>
+        <text x="120" y="212" font-family="JetBrains Mono, monospace" font-size="9" fill="#8d98a1">IDENTITY</text>
+        <line x1="105" y1="182" x2="140" y2="188" stroke="#3a434c" stroke-width="1"/>
+
+        <!-- coordinate readout -->
+        <text x="20" y="248" font-family="JetBrains Mono, monospace" font-size="8" fill="#5c6870">LINK STATUS: NOMINAL // LAT 34.02 LON -118.29</text>
+      </svg>
+      <div class="schematic-cap">
+        <span>FIG. 01 — GROUND-TO-AIR DATALINK, SIMPLIFIED</span>
+        <span>SCALE N/A</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Focus areas</h2>
+      <div class="section-tag">CONSULTING SCOPE</div>
+    </div>
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-tag">COMMS</div>
+        <h3>Mission Communications</h3>
+        <p>RF communications and tactical datalink environments where timing, reliability, and interface clarity drive mission outcomes.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-tag">SEC</div>
+        <h3>Secure Architecture</h3>
+        <p>Trust boundaries, identity posture, interface governance, and integration risk reduction for mission-critical systems.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-tag">GOV</div>
+        <h3>Program Governance</h3>
+        <p>Decision clarity, stakeholder alignment, measurable acceptance criteria, and controlled change management under pressure.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-tag">OPS</div>
+        <h3>Operational Resilience</h3>
+        <p>Ground station operational support strategy, readiness validation, and sustainment posture where recoverability matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-band">
+  <div class="wrap photo-band-inner">
+    <div class="cap">
+      <span>FIG. 02 — FIELD BACKGROUND</span>
+      <span>AVIATION SYSTEMS &amp; AVIONICS — HANGAR</span>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience profile</h2>
+      <div class="section-tag">BACKGROUND</div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="role">U.S. Marine Corps — Aviation Systems &amp; Avionics</div>
+        <div class="desc">Mission-critical aviation systems within operational squadrons; precision and accountability under pressure.</div>
+      </div>
+      <div class="tl-item">
+        <div class="role">Defense Communications — RF Field Operations</div>
+        <div class="desc">Field-level RF systems and tactical datalink environments.</div>
+      </div>
+      <div class="tl-item">
+        <div class="role">Ground Systems — Operational Readiness &amp; Sustainment</div>
+        <div class="desc">Readiness validation and sustainment posture for ground station infrastructure.</div>
+      </div>
+      <div class="tl-item">
+        <div class="role">Secure Environments — Systems Engineering &amp; Integration</div>
+        <div class="desc">Trust boundaries and integration discipline across mission-critical systems.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section philosophy">
+  <div class="wrap">
+    <div class="section-tag" style="margin-bottom:18px;">OPERATING PHILOSOPHY</div>
+    <blockquote>Clarity over complexity. Outcomes over activity. Security is <em>a design constraint</em> — not an afterthought.</blockquote>
+  </div>
+</section>
+
+<section class="section" id="insights">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Engagement model</h2>
+      <div class="section-tag">FORMATS</div>
+    </div>
+    <table class="spec-table">
+      <tr><td class="fmt">ARCHITECTURE &amp; RISK ASSESSMENT</td><td class="desc">Targeted review with findings and recommended actions.</td></tr>
+      <tr><td class="fmt">EXECUTIVE TECHNICAL BRIEFING</td><td class="desc">Decision-ready synthesis for program leadership.</td></tr>
+      <tr><td class="fmt">INTEGRATION RISK REDUCTION</td><td class="desc">Short-term advisory support during critical integration phases.</td></tr>
+      <tr><td class="fmt">READINESS REVIEW</td><td class="desc">Operational posture assessment focused on sustainment and recoverability.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <div class="section-tag">GET IN TOUCH</div>
+    </div>
+    <div class="contact">
+      <div class="contact-panel">
+        <h3>Consulting inquiries</h3>
+        <p>For engagements involving mission communications strategy, secure architecture review, or program governance during critical delivery phases. Typical response within 1–2 business days.</p>
+        <div class="contact-list">
+          <a href="mailto:contact@ness.vet">contact@ness.vet</a>
+          <a href="https://www.linkedin.com/in/nguyenl1904" target="_blank" rel="noopener">linkedin.com/in/nguyenl1904</a>
+        </div>
+      </div>
+      <div class="contact-panel">
+        <h3>Note on scope</h3>
+        <p>No sensitive program details are published here. This site covers principles, operating approach, and professional capabilities only — engagement specifics stay within contractual and operational security boundaries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 NESS.VET</span>
+    <span>MISSION COMMUNICATIONS · SECURE SYSTEMS · PROGRAM GOVERNANCE</span>
+  </div>
+</footer>
+
+</body>
+</html>
